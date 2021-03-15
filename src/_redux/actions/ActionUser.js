@@ -32,12 +32,13 @@ export const getUserData = () => (dispatch) => {
 
 export const editUserData = (data) => async (dispatch) => {
     for (var i = 0; i < user.length; i++) {
-        if (user[i].Id === data.id) {
+        if (user[i].id === data.id) {
           user[i].name = data.name;
           user[i].address = data.address;
           user[i].home = data.home;
           break;
         }
+        console.log(user)
       }
 	try {
 		dispatch({ type: ActionTypes.SET_USER, payload: user });
