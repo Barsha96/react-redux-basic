@@ -69,7 +69,7 @@ const User = ({user}) => {
     const onSubmit = async (data) => {
         data.id=user.id;
         try{
-            dispatch(editUserData(data));
+            dispatch(editUserData(data)).then(console.log(errors));
         }
         catch(e){
             console.log(e, "dispatch error")
